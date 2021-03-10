@@ -84,7 +84,8 @@ namespace Casbin.AspNetCore.Authorization
 
                 var requestValues = await transformer.TransformAsync(context, data);
 
-                if (enforcer.Enforce(requestValues as object[] ?? requestValues.ToArray()))
+                var request = requestValues as object[] ?? requestValues.ToArray();
+                if (enforcer.Enforce(request))
                 {
                     _logger.CasbinAuthorizationSucceeded();
                     continue;

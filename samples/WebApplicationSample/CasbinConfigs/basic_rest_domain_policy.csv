@@ -1,9 +1,10 @@
 # Policy below will only match using both BasicRequestTransformer and CustomRequestTransformer
-p, alice@example.com, BasicTest, Get
+p, alice@example.com, customer_1, BasicTest, Get
 
 # Policy below will only match if using the CustomRequestTransformer
-p, alice@example.com, /attribtest, GET
+p, alice@example.com, customer_1, /attribtest, GET
 
 # Policy below will only match if using the CustomRequestTransformer
-#p, alice@example.com, /home/privacy, GET
+p, alice@example.com, customer_1, /home/privacy, GET
 
+p, alice@example.com, mytenant124, /api/*/company/add, GET

@@ -39,8 +39,8 @@ namespace WebApplicationSample
             services.AddCasbinAuthorization(options =>
             {
                 options.PreferSubClaimType = ClaimTypes.Name;
-                options.DefaultModelPath = Path.Combine("CasbinConfigs", "basic_model.conf");
-                options.DefaultPolicyPath = Path.Combine("CasbinConfigs", "basic_policy.csv");
+                options.DefaultModelPath = Path.Combine("CasbinConfigs", "basic_rest_domain_model.conf");
+                options.DefaultPolicyPath = Path.Combine("CasbinConfigs", "basic_rest_domain_policy.csv");
 
                 // Comment line below to use the default BasicRequestTransformer
                 // Note: Commenting the line means that the action methods MUST have [CasbinAuthorize()] attribute which explicitly specifies obj and policy. Otherwise authorization will be denied
@@ -61,7 +61,7 @@ namespace WebApplicationSample
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+//            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
 
